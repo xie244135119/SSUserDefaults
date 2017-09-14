@@ -1,0 +1,29 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BDF394AD00F0672C031FDA5A297CD80086AC8A54" : 9223372036854775807,
+    "2F1365C4B32F8F9DA07D35F8322C93B05D5D4D2C" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "364EE144-33E3-425B-ACDD-383825E7B7EE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BDF394AD00F0672C031FDA5A297CD80086AC8A54" : "SSUserDefaults\/SSUserDefaults\/ObjectiveRocks\/rocksdb\/",
+    "2F1365C4B32F8F9DA07D35F8322C93B05D5D4D2C" : "SSUserDefaults\/SSUserDefaults\/ObjectiveRocks\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SSUserDefaults",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SSUserDefaults.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/iabudiab\/ObjectiveRocks.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2F1365C4B32F8F9DA07D35F8322C93B05D5D4D2C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/facebook\/rocksdb.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BDF394AD00F0672C031FDA5A297CD80086AC8A54"
+    }
+  ]
+}
