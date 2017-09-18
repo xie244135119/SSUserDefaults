@@ -27,7 +27,13 @@
 //            defaults = [[SSRocksDbDefaults alloc]init];
             break;
         case SSUserDefaultsLevelDb:
-            defaults = [[SSLevelDbDefaults alloc]init];
+        {
+            static SSLevelDbDefaults *_defaults = nil;
+            if (_defaults == nil) {
+                _defaults = [[SSLevelDbDefaults alloc]init];
+            }
+            defaults = _defaults;
+        }
             break;
         default:
             break;
