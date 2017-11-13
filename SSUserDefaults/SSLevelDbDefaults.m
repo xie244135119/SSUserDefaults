@@ -70,6 +70,9 @@
 // 设置值
 - (void)setObject:(NSObject *)object forKey:(NSString *)key
 {
+    if (object == nil || key == nil) {
+        return;
+    }
     [_levelDb setObject:object forKey:key];
 }
 
@@ -77,6 +80,10 @@
 // 取值
 - (id)objectForKey:(NSString *)key
 {
+    if (key == nil) {
+        return nil;
+    }
+    
     NSData *keydata = [key dataUsingEncoding:4];
     id resault = [_levelDb objectForKey:keydata];
     return resault;
