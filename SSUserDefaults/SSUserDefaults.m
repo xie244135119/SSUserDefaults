@@ -10,9 +10,20 @@
 #import "SSSystemDefaults.h"
 #import "SSLevelDbDefaults.h"
 
+
+@interface SSUserDefaults()
+{
+    NSLock *_lock;              //加锁 对写加锁
+}
+@end
+
+
 @implementation SSUserDefaults
 
-
+- (void)dealloc
+{
+    _lock = nil;
+}
 
 
 + (SSUserDefaults *)defaultsWithType:(SSUserDefaultsType)type

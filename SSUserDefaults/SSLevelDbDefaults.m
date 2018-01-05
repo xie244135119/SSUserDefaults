@@ -12,17 +12,26 @@
 
 @interface SSLevelDbDefaults()
 {
-    LevelDB *_levelDb;              //
+    LevelDB *_levelDb;                          //
+    dispatch_queue_t _concurrentQueue;          //操作队列
 }
 @end
 
 @implementation SSLevelDbDefaults
 
 
+- (void)dealloc
+{
+//    dispatch_release(_concurrentQueue);
+}
+
 
 - (instancetype)init
 {
     if (self = [super init]) {
+        // 建立读取队列
+        _concurrentQueue = dispatch_queue_create("SSLevelDbDefaults", DISPATCH_QUEUE_CONCURRENT);
+        
         // 打开数据库
         [self openDb];
     }
@@ -73,7 +82,10 @@
     if (object == nil || key == nil) {
         return;
     }
-    [_levelDb setObject:object forKey:key];
+    
+    dispatch_barrier_async(_concurrentQueue, ^{
+        [_levelDb setObject:object forKey:key];
+    });
 }
 
 
@@ -83,9 +95,11 @@
     if (key == nil) {
         return nil;
     }
-    
-    NSData *keydata = [key dataUsingEncoding:4];
-    id resault = [_levelDb objectForKey:keydata];
+    __block id resault = nil;
+    dispatch_sync(_concurrentQueue, ^{
+        NSData *keydata = [key dataUsingEncoding:4];
+        resault = [_levelDb objectForKey:keydata];
+    });
     return resault;
 }
 
